@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const estudiantesRoutes = require('./routes/estudiantesRoutes.js');
 const profesoresRoutes = require('./routes/profesoresRoutes.js');
+const cursosRoutes = require('./routes/cursosRoutes.js');
 const cors = require('cors');
 app.use(express.json());
 app.use(cors());
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
 
 app.use('/estudiantes', estudiantesRoutes);
 app.use('/profesores', profesoresRoutes);
+app.use('/cursos', cursosRoutes);
 
 app.listen(6500, () => {
     console.log('Servidor activo');
